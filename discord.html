@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discord page">
+    <link rel="icon" type="image/ico" href="RRM.webp" />
+    <title>Discord</title>
+
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+      </div>
+      
+      <div class="background"></div>
+
+
+      <style>
+        html {
+            overflow-x: hidden;
+        }
+  
+  .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-image: url(preview4.webp);
+      z-index: -1;
+      background-position: center;
+      filter: blur(10px);
+      transition: opacity 1.5s ease-in-out;
+  }
+  
+  .content {
+    max-width: 100%;
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding-top: 20vh;
+  }
+
+        body {
+            max-width: 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #000000; /* Slightly lighter grey than the header */
+            background-size: cover;
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            transition: background-image 1s ease-in-out;
+
+            overflow-x:hidden;
+	        overflow-y:hidden;
+            overflow: auto;
+        }
+        ::-webkit-scrollbar {
+            width: 0; /* Removes scrollbar visuals */
+        }
+
+           /*waves****************************/
+
+
+.box {
+	position: fixed;
+    z-index: 0;
+	top: 0;
+	transform: rotate(80deg);
+	left: 0;
+}
+
+.wave {
+	position: fixed;
+	top: 0;
+	left: 0;
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  background: rgb(100, 6, 6);
+  width: 1500px;
+  height: 1300px;
+  margin-left: -150px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 7000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 7500ms infinite linear;
+	position: fixed;
+	background-color: #b42020;
+}
+
+.wave.-two {
+  animation: drift 3000ms infinite linear;
+  opacity: .1;
+  background: black;
+	position: fixed;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+/*LOADING SPACE*/
+
+.contain {
+	animation-delay: 4s;
+	z-index: 1;
+	position: relative;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  background: #25a7d7;
+  background: -webkit-linear-gradient(#25a7d7, #2962FF);
+  background: linear-gradient(#25a7d7, #25a7d7);
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+}
+
+/*Animation*/
+.icon:nth-child(2) img {-webkit-animation-delay: 0.2s;animation-delay: 0.2s}
+.icon:nth-child(3) img {-webkit-animation-delay: 0.3s;animation-delay: 0.3s}
+.icon:nth-child(4) img {-webkit-animation-delay: 0.4s;animation-delay: 0.4s}
+
+.icon img {
+  -webkit-animation: anim 2s ease infinite;
+  animation: anim 2s ease infinite;
+  -webkit-transform: scale(0,0) rotateZ(180deg);
+  transform: scale(0,0) rotateZ(180deg);
+}
+
+@-webkit-keyframes anim{
+  0% {
+    -webkit-transform: scale(0,0) rotateZ(-90deg);
+    transform: scale(0,0) rotateZ(-90deg);opacity:0
+  }
+  30% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  50% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  80% {
+    -webkit-transform: scale(0,0) rotateZ(90deg);
+    transform: scale(0,0) rotateZ(90deg);opacity:0
+  }
+}
+
+@keyframes anim{
+  0% {
+    -webkit-transform: scale(0,0) rotateZ(-90deg);
+    transform: scale(0,0) rotateZ(-90deg);opacity:0
+  }
+  30% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  50% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  80% {
+    -webkit-transform: scale(0,0) rotateZ(90deg);
+    transform: scale(0,0) rotateZ(90deg);opacity:0
+  }
+}
+        header {
+            max-width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.1rem;
+            z-index: 1;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            transition: top 0.3s;
+            border-radius: 0 0 45px 45px; /* Rounded corners */
+        }
+        header.hidden {
+            top: -100px;
+        }
+        header .logo {
+            text-align: center;
+            flex-grow: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        header .logo a {
+            text-decoration: none;
+        }
+        header .logo img {
+            max-height: 70px;
+        }
+        header .logo:hover {
+            transform: scale(1.1); /* Enlarges the logo */
+            box-shadow: 0 0px 0px; /* Adjusted box-shadow */
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 100px; /* Reduced spacing */
+        }
+        nav.left {
+            margin-right: 1rem;
+        }
+        nav.right {
+            margin-left: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        nav ul li a img {
+            max-height: 40px; /* Increased size for icons */
+        }
+        nav ul li a:hover {
+            transform: scale(1.2); /* Enlarges the button */
+            box-shadow: 0 0px 0px; /* Adjusted box-shadow */
+        }
+        main {
+            flex: 1;
+            padding: 2rem;
+            text-align: left;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .widget-container {
+            flex: 1;
+            position: relative;
+            top: 70px;
+            right: 0;
+            margin-right: 20px;
+        }
+        .channels-container {
+            flex: 1;
+            margin-left: 20px;
+            position: relative;
+            
+
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.1rem;
+            position: relative;
+        }
+        .faq {
+            margin: 10px 0; /* Reduced spacing */
+            position: relative;
+            width: 500px;
+            right: -150px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .faq h3 {
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            margin: 0;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+            border-color: #b42020;
+            border-style: solid;
+            border-width: 2px;
+        }
+        .faq h3:hover {
+            background-color: #4d4c4c;
+        }
+        .faq p {
+            background-color: #444;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            max-height: 0;
+            visibility: hidden;
+            transition: max-height 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+        .faq p.active {
+            max-height: 300px; /* Adjust this to fit your content */
+            visibility: visible;
+            border-radius: 10px;
+            border-color: #b42020;
+            border-style: solid;
+            border-width: 2px;
+        }
+        h2{
+            color: #fff;
+            position: relative;
+            width: 500px;
+            right: -150px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .supporter-channels{
+            margin: 0px 0; /* Reduced spacing */
+            position: relative;
+            width: 500px;
+            right: 150px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        @media (max-width: 1150px) {
+            /* Header */
+            header {
+                box-sizing: border-box;
+                flex-direction: column;
+                padding: 0.5rem 0;
+                text-align: center;
+                height: auto;
+                max-width: 100vw;
+                overflow: hidden;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 5px 0;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 5px 0; /* Csökkentett margó */
+                width: 90%; /* Nem nyúlik túl */
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                z-index: 1001;
+            }
+
+            /* Logo */
+            header .logo img {
+                max-height: 70px;
+            }
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .widget-container {
+                align-self: center;
+                left: -1.5%;
+                right: 0;
+                top: -10px;
+                max-width: 100%;
+                align-content: center;
+            }
+
+            .supporter-channels {
+                left: 0;
+                right: 0;
+                max-width: 100%;
+                width: 80%;
+                align-items: center;
+                justify-content: center;
+            }
+            .channels-container {
+                left: -1.5%;
+                right: 0;
+                max-width: 100%;
+                width: 80%;
+                align-items: center;
+            }
+            .faq {
+                max-width: 100%;
+                width: 100%;
+                position: relative;
+                left: -17px;
+                align-items: center;
+                align-self: center;
+            }
+            div .faq {
+                width: 90%;
+                position: relative;
+                align-items: center;
+                align-self: center;
+            }
+            body {
+                overflow-x: hidden;
+                width: 100vw;
+            }
+            h3 {
+                width: 100%;
+                font-size: 15px;
+            }
+            div h2 {
+                left: -3%;
+                right: 0;
+                width: 100%;
+                position: relative;
+                align-items: center;
+                align-self: center;
+            }
+            .faq p.active {
+                width: 100%;
+                font-size: 15px;
+            }
+            .faq p {
+                width: 100%;
+                font-size: 15px;
+            }
+            /* Általános tartalom középre */
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 20px;
+                left: 0;
+                right: 0;
+            }
+            .content {
+                width: max-content;
+            }
+        }
+    </style>
+    <script>
+
+const images = ['preview.jpg', 'preview2.jpg', 'preview3.jpg', 'preview4.webp', 'preview5.jpg', 'preview6.jpg', 'preview7.jpg', 'preview8.jpg', 'preview9.jpg', 'preview10.jpg', 'preview11.jpg', 'preview12.jpg', 'preview13.jpg', 'preview14.jpg', 'preview15.jpg', 'preview16.jpg', 'preview17.jpg', 'preview18.jpg'];
+
+function changeBackground() {
+    const bg = document.querySelector('.background');
+    bg.style.opacity = 0; // Halványítás
+
+    setTimeout(() => {
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * images.length);
+        } while (bg.style.backgroundImage.includes(images[randomIndex])); // Ne ismételje az előzőt
+
+        bg.style.backgroundImage = `url('${images[randomIndex]}')`;
+        bg.style.opacity = 1; // Új kép megjelenítése
+    }, 1000);
+}
+
+setInterval(changeBackground, 7000); // 7 másodpercenként váltás
+
+
+
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqs = document.querySelectorAll('.faq h3');
+            faqs.forEach(faq => {
+                faq.addEventListener('click', () => {
+                    const content = faq.nextElementSibling;
+                    if (content.classList.contains('active')) {
+                        content.style.maxHeight = null;
+                        content.classList.remove('active');
+                    } else {
+                        content.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <button class="menu-toggle">☰</button>
+        <nav class="left">
+            <ul class="nav-menu">
+                <li><a href="car.html"><img src="kocsi.png" alt="Modok"></a></li>
+                <li><a href="WIP.html"><img src="work-in-progress.png" alt="Készülők"></a></li>
+                <li><a href="faq.html"><img src="faq.png" alt="FAQ"></a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="index.html"><img src="RRM.webp" alt="Logo"></a>
+        </div>
+        <nav class="right">
+            <ul class="nav-menu2">
+                <li><a href="social.html"><img src="social.png" alt="Social"></a></li>
+                <li><a href="contacts.html"><img src="chat.png" alt="Elérhetőségek"></a></li>
+                <li><a href="discord.html"><img src="discord.webp" alt="Discord"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="widget-container">
+            <iframe src="https://discord.com/widget?id=1224650802766020659&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+        <div class="supporter-channels">
+            <h2>Supporter csatornák:</h2>
+            <div class="faq">
+                <h3>🚘wip-autó-képek-videók</h3>
+                <p>Ide a Supporter-ek számára több képet/videót rakunk ki az aktuálisan készülő autókról</p>
+            </div>
+            <div class="faq">
+                <h3>🔰teszt-autók</h3>
+                <p>Ide a már tesztelhető állapotba került autókat rakjuk ki ami azt jelenti hogy megjelenés előtt tudják a támogatók kipróbálni néhány autónkat (nem minden készülő autó lesz tesztelhető!)</p>
+            </div>
+            <div class="faq">
+                <h3>🗯teszt-autók-észrevételek</h3>
+                <p>Ide a teszt autók teszteléséből adodó észrevételeket írhatjátok le ha esetleg van valami hiba amit javítani kéne stb.</p>
+            </div>
+            <div class="faq">
+                <h3>🆘probléma-a-fizetős-autó-frissítésével</h3>
+                <p>Ide az esetleges frissítési problémákkal tudtok fordulni mint pl nem tudjátok hogy/hol kell letölteni a fizetős autókhoz a frissítést nem tudjátok esetleg ezt letölteni stb.</p>
+            </div>
+        </div>
+        <div class="channels-container">
+            <h2>Általános csatornák:</h2>
+            <div class="faq">
+                <h3>⛔Rules</h3>
+                <p>Itt a betartandó szabályokat lehet megtalálni</p>
+            </div>
+            <div class="faq">
+                <h3>📃News</h3>
+                <p>Itt a készülő modokról információt és egyéb dolgokat osztunk meg a közösségünkkel</p>
+            </div>
+            <div class="faq">
+                <h3>💬Hu/Eng beszélgető</h3>
+                <p>Itt lehet beszélgetni</p>
+            </div>
+            <div class="faq">
+                <h3>❓Hu/Eng segítségkérés</h3>
+                <p>Itt lehet a felmerülő problémákat hibákat jelezni és segítséget kérni a megoldásához</p>
+            </div>
+            <div class="faq">
+                <h3>🚗Car requests</h3>
+                <p>Ide lehet a már meglévő autókhoz frissítés ötleteket beküldeni valami észrevételt esetleg amit szeretnétek hogy kijavítsunk stb.</p>
+            </div>
+            <div class="faq">
+                <h3>🔧update-requests</h3>
+                <p>Ide lehet az általatok kért autókat felrakni valamint szavazni rájuk hogy melyik készüljön el</p>
+            </div>
+            <div class="faq">
+                <h3>👍Feedbacks</h3>
+                <p>Itt lehet nekünk visszajelzéseket adni a modokkal kapcsolatban</p>
+            </div>
+            <div class="faq">
+                <h3>🏁Verseny lehetőségek</h3>
+                <p>Ide az általatok vagy általunk rendezett verseny lehetőségek kerülnek be</p>
+            </div>
+            <div class="faq">
+                <h3>📁Car mods</h3>
+                <p>Itt találhatóak meg az általunk készített modok és a hozzájuk tartozó letöltési linkek</p>
+            </div>
+            <div class="faq">
+                <h3>📁maps-tracks</h3>
+                <p>Ide track modokat lehet beküldeni ha valami jó mapod van amit megosztanál azt ide beküldheted</p>
+            </div>
+            <div class="faq">
+                <h3>📕Guides</h3>
+                <p>Itt néhány kisebb kis útmutató található meg mint pl.: az új menü, felni csere egyszerűen, gonosz swift fordított pedálok beállítása stb.</p>
+            </div>
+            <div class="faq">
+                <h3>📽Videos</h3>
+                <p>Ide az általatok készített videókat küldhetitek be</p>
+            </div>
+            <div class="faq">
+                <h3>📷Images</h3>
+                <p>Ide az általatok készített képeket küldhetitek be</p>
+            </div>
+            <div class="faq">
+                <h3>🔴élő-adások</h3>
+                <p>Ide engedéllyel (Ránk írtok) be lehet rakni egyéb discord szervereket megegyezés szerint</p>
+            </div>
+            <div class="faq">
+                <h3>🗣Egyéb szerverek</h3>
+                <p>Ide engedéllyel (Ránk írtok) be lehet rakni egyéb discord szervereket megegyezés szerint</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 RRM. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const navMenu2 = document.querySelector('.nav-menu2');
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navMenu2.classList.toggle('active');
+            });
+        });
+
+    </script>
+</body>
+</html>

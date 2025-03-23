@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Basic webpage template">
+    <link rel="icon" type="image/ico" href="RRM.webp" />
+    <title>RRM</title>
+
+
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+      </div>
+      
+
+      <div class="background"></div>
+
+
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url(preview4.webp);
+    z-index: -1;
+    background-position: center;
+    filter: blur(10px);
+    transition: opacity 1.5s ease-in-out;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    width: 1000;
+    color: rgb(255, 255, 255);
+    padding-top: 20vh;
+    overflow: hidden;
+    margin-top: -80px;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400px;
+    margin-bottom: 80px;
+
+}
+
+h3{
+    position: relative;
+    right: -350px;
+    font-size: 20px;
+    text-align: left;
+    font-style: bold;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.fika{
+    position: relative;
+    text-align: left;
+    right: -350px;
+    font-size: 17px;
+    font-style: bold;
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-text-fill-color: #000000;
+    -webkit-text-stroke: #ffffff;
+    -webkit-text-stroke-width: 1px;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #000000; /* Slightly lighter grey than the header */
+            background-size: cover;
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            transition: background-image 1s ease-in-out;
+
+            overflow-x:hidden;
+	        overflow-y:hidden;
+            overflow: auto;
+        }
+        ::-webkit-scrollbar {
+            width: 0; /* Removes scrollbar visuals */
+        }
+
+           /*waves****************************/
+
+
+.box {
+	position: fixed;
+	top: 0;
+	transform: rotate(80deg);
+	left: 0;
+}
+
+.wave {
+	position: fixed;
+	top: 0;
+	left: 0;
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  background: rgb(100, 6, 6);
+  width: 1500px;
+  height: 1300px;
+  margin-left: -150px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 7000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 7500ms infinite linear;
+	position: fixed;
+	background-color: #b42020;
+}
+
+.wave.-two {
+  animation: drift 3000ms infinite linear;
+  opacity: .1;
+  background: black;
+	position: fixed;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+/*LOADING SPACE*/
+
+.contain {
+	animation-delay: 4s;
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  background: #25a7d7;
+  background: -webkit-linear-gradient(#25a7d7, #2962FF);
+  background: linear-gradient(#25a7d7, #25a7d7);
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+}
+
+/*Animation*/
+.icon:nth-child(2) img {-webkit-animation-delay: 0.2s;animation-delay: 0.2s}
+.icon:nth-child(3) img {-webkit-animation-delay: 0.3s;animation-delay: 0.3s}
+.icon:nth-child(4) img {-webkit-animation-delay: 0.4s;animation-delay: 0.4s}
+
+.icon img {
+  -webkit-animation: anim 2s ease infinite;
+  animation: anim 2s ease infinite;
+  -webkit-transform: scale(0,0) rotateZ(180deg);
+  transform: scale(0,0) rotateZ(180deg);
+}
+
+@-webkit-keyframes anim{
+  0% {
+    -webkit-transform: scale(0,0) rotateZ(-90deg);
+    transform: scale(0,0) rotateZ(-90deg);opacity:0
+  }
+  30% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  50% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  80% {
+    -webkit-transform: scale(0,0) rotateZ(90deg);
+    transform: scale(0,0) rotateZ(90deg);opacity:0
+  }
+}
+
+@keyframes anim{
+  0% {
+    -webkit-transform: scale(0,0) rotateZ(-90deg);
+    transform: scale(0,0) rotateZ(-90deg);opacity:0
+  }
+  30% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  50% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  80% {
+    -webkit-transform: scale(0,0) rotateZ(90deg);
+    transform: scale(0,0) rotateZ(90deg);opacity:0
+  }
+}
+
+
+        header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            transition: top 0.3s;
+            border-radius: 0 0 45px 45px; /* Rounded corners */
+        }
+        header.hidden {
+            top: -100px;
+        }
+        header .logo {
+            text-align: center;
+            flex-grow: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        header .logo a {
+            text-decoration: none;
+        }
+        header .logo img {
+            max-height: 70px;
+        }
+        header .logo:hover {
+            transform: scale(1.1); /* Enlarges the logo */
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 100px;
+        }
+        nav.left {
+            margin-right: 1rem;
+        }
+        nav.right {
+            margin-left: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        nav ul li a img {
+            max-height: 40px; /* Increased size for icons */
+        }
+        nav ul li a:hover {
+            transform: scale(1.2); /* Enlarges the button */
+            box-shadow: 0 0px 0px; /* Adjusted box-shadow */
+        }
+        main {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 100px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.1rem;
+            position: relative;
+        }
+        .image-container {
+            width: 1050px;
+            height: 590px;
+            background-color: #666;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            overflow: hidden;
+            position: absolute;
+            transition: filter 0.3s ease, color 0.3s ease;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        .image-container:hover {
+            filter: brightness(0.8); /* Darkens the image on hover */
+        }
+        .image-container .overlay-text {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover .overlay-text {
+            transform: translateY(0);
+        }
+        .image1 {
+            top: 150px;
+            left: 100px;
+        }
+        .image2 {
+            top: 800px;
+            right: 50px;
+        }
+        .corner-image {
+            position: relative;
+            opacity: 0.7;
+            left: -150px;
+            top: -100px;
+            max-width: 1000px;
+            max-height: 1000px;
+            z-index: 1000;
+        }
+    
+        a{
+            color: #777777;
+        }
+
+        .corner-image2 {
+            position: absolute;
+            top: 300px;
+            left: 1300px;
+            opacity: 0.5;
+            max-width: 1500px;
+            max-height: 1500px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        @media (max-width: 1150px) {
+            /* Header */
+            header {
+                box-sizing: border-box;
+                flex-direction: column;
+                padding: 0.5rem 0;
+                text-align: center;
+                height: auto;
+                max-width: 100vw;
+                overflow: hidden;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 5px 0;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 5px 0; /* Csökkentett margó */
+                width: 90%; /* Nem nyúlik túl */
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                z-index: 1001;
+            }
+
+            /* Logo */
+            header .logo img {
+                max-height: 70px;
+            }
+
+            /* Footer */
+            footer {
+                max-width: 100vw;
+                box-sizing: border-box;
+                width: 100vw;
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+            }
+            .content {
+                width: max-content;
+            }
+            .faq {
+                max-width: 100%;
+                width: 50%;
+                position: relative;
+                left: -350px;
+                align-items: center;
+            }
+            body {
+                overflow-x: hidden;
+                width: 100vw;
+            }
+            h3 {
+                width: 30%;
+                font-size: 20px;
+            }
+            .faq p.active {
+                width: 87%;
+                font-size: 15px;
+            }
+            .faq p {
+                width: 87%;
+                font-size: 15px;
+            }
+            .szoveg {
+            font-size: 35px;
+            }
+        }
+        h2{
+            top: -30px;
+            align-self: center;
+            position: relative;
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 400px;
+            margin-bottom: 80px;
+            color: white;
+
+        }
+        .faq {
+            margin: 10px 0; /* Reduced spacing */
+            position: relative;
+            width: 500px;
+            right: 100px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            top: -40px;
+        }
+        .faq h3 {
+            text-align: center;
+            width: 130px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            margin: 0;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+            border-color: #b42020;
+            border-style: solid;
+            border-width: 2px;
+        }
+        .faq h3:hover {
+            background-color: #4d4c4c;
+        }
+        .faq p {
+            text-align: justify;
+            position: relative;
+            left: 365px;
+            background-color: #444;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            max-height: 0;
+            visibility: hidden;
+            transition: max-height 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+        .faq p.active {
+            max-height: 300px; /* Adjust this to fit your content */
+            visibility: visible;
+            border-radius: 10px;
+            border-color: #b42020;
+            border-style: solid;
+            border-width: 2px;
+        }
+    </style>
+    <script>
+
+
+const images = ['preview.jpg', 'preview2.jpg', 'preview3.jpg', 'preview4.webp', 'preview5.jpg', 'preview6.jpg', 'preview7.jpg', 'preview8.jpg', 'preview9.jpg', 'preview10.jpg', 'preview11.jpg', 'preview12.jpg', 'preview13.jpg', 'preview14.jpg', 'preview15.jpg', 'preview16.jpg', 'preview17.jpg', 'preview18.jpg'];
+
+function changeBackground() {
+    const bg = document.querySelector('.background');
+    bg.style.opacity = 0; // Halványítás
+
+    setTimeout(() => {
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * images.length);
+        } while (bg.style.backgroundImage.includes(images[randomIndex])); // Ne ismételje az előzőt
+
+        bg.style.backgroundImage = `url('${images[randomIndex]}')`;
+        bg.style.opacity = 1; // Új kép megjelenítése
+    }, 1000);
+}
+
+setInterval(changeBackground, 7000); // 7 másodpercenként váltás
+
+    
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqs = document.querySelectorAll('.faq h3');
+            faqs.forEach(faq => {
+                faq.addEventListener('click', () => {
+                    const content = faq.nextElementSibling;
+                    if (content.classList.contains('active')) {
+                        content.style.maxHeight = null;
+                        content.classList.remove('active');
+                    } else {
+                        content.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <button class="menu-toggle">☰</button>
+        <nav class="left">
+            <ul class="nav-menu">
+                <li><a href="car.html"><img src="kocsi.png" alt="Modok"></a></li>
+                <li><a href="WIP.html"><img src="work-in-progress.png" alt="Készülők"></a></li>
+                <li><a href="faq.html"><img src="faq.png" alt="FAQ"></a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="index.html"><img src="RRM.webp" alt="Logo"></a>
+        </div>
+        <nav class="right">
+            <ul class="nav-menu2">
+                <li><a href="social.html"><img src="social.png" alt="Social"></a></li>
+                <li><a href="contacts.html"><img src="chat.png" alt="Elérhetőségek"></a></li>
+                <li><a href="discord.html"><img src="discord.webp" alt="Discord"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="szoveg">Elérhetőségeink:</h2>
+        <div class="faq">
+            <h3>Email:</h3>
+            <p>Email címünk: <br>Többek között itt is felvehetitek velünk a kapcsolatot ha valami probléma adódna</p>
+        </div>
+        <div class="faq">
+            <h3>Discord:</h3>
+            <p>A <a href="https://discord.gg/psm773HaT2" target="_blank">Discord szerverünkön</a> is feltudjátok velünk venni a kapcsolatot valamint privátba is tudtok esetleg segítséget kérni ha szükség lenne rá</p>
+        </div>
+        <div class="faq">
+            <h3>Instagram:</h3>
+            <p><a href="https://www.instagram.com/rev_rat_mods/" target="_blank">Instagram-on</a> keresztül is felvehetitek velünk a kapcsolatot kommentek között valamint privát üzenetben is megpróbálunk válaszolni ha valami kérdés merülne fel!</p>
+        </div>
+        <div class="faq">
+            <h3>TikTok:</h3>
+            <p>Az előbb felsoroltak mellett természetesen <a href="https://www.tiktok.com/@revratmods" target="_blank">TikTok-on</a> is felvehetitek velünk a kapcsolatot itt is ugyan úgy kommentekre is valamint privát üzenetekre is megpróbálunk válaszolni!</p>
+        </div>
+        <div class="faq">
+            <h3>Ko-fi:</h3>
+            <p><a href="https://ko-fi.com/revratmods" target="_blank">Ko-fi</a> a támogatás mellett még van lehetőség arra is hogy ha esetleg elakadnál vagy valami probléma adódna akkor tudsz nekünk üzenni a felületen és tudunk segíteni</p>
+        </div>
+    </main>
+    
+<footer>
+        <p>&copy; 2025 RRM. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const navMenu2 = document.querySelector('.nav-menu2');
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navMenu2.classList.toggle('active');
+            });
+        });
+
+    </script>
+
+</body>
+</html>
