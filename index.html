@@ -36,11 +36,9 @@
 }
 
 .content {
-    position: relative;
     z-index: 1;
     width: 100%;
     color: rgb(255, 255, 255);
-    padding-top: 20vh;
     overflow: hidden;
     margin-top: -80px;
 }
@@ -56,7 +54,6 @@ h1{
 
 h3{
     position: relative;
-    right: -20%;
     font-size: 120%;
     text-align: left;
     font-style: bold;
@@ -68,7 +65,6 @@ h3{
     width: 100%;
     position: relative;
     text-align: left;
-    right: -20%;
     font-size: 17px;
     font-style: bold;
     font-family: 'Courier New', Courier, monospace;
@@ -319,8 +315,19 @@ h3{
             right: 20px;
             z-index: 1001;
         }
+        main {
+            margin: 50vh auto 0;
+            transform: translateY(-50%);
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+        }
 
         @media (max-width: 1280px) {
+            main {
+            margin: 0;
+            transform: none;
+            }
             /* Header */
             header {
                 flex-direction: column;
@@ -378,15 +385,10 @@ h3{
                 font-size: 20px;
             }
             .content {
-                top: -100px;
+                margin-top: 80px;
             }
         }
-        main {
-            flex: 1;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 100px;
-        }
+        
         footer {
             background-color: #333;
             color: white;
@@ -506,7 +508,7 @@ setInterval(changeBackground, 7000); // 7 másodpercenként váltás
             </ul>
         </nav>
     </header>
-    <main>
+    <main style="z-index: 1;">
         
 
 
