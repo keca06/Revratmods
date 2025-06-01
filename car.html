@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Modok">
     <link rel="icon" type="image/ico" href="RRM.webp" />
+    <link rel="stylesheet" href="transitions.css">
+    <script src="transitions.js"></script>
     <title>Mods</title>
 
 
@@ -677,23 +679,24 @@ setInterval(changeBackground, 7000); // 7 másodpercenként váltás
     </script>
 </head>
 <body>
+    <div class="transition transition-1 is-active"></div>
     <header>
         <button class="menu-toggle">☰</button>
         <nav class="left">
             <ul class="nav-menu">
-                <li><a href="car.html"><img src="kocsi.png" alt="Modok"></a></li>
-                <li><a href="WIP.html"><img src="work-in-progress.png" alt="Készülők"></a></li>
-                <li><a href="faq.html"><img src="faq.png" alt="FAQ"></a></li>
+                <li><a href="car.html" title="Kész Modok"><img src="kocsi.png" alt="Modok"></a></li>
+                <li><a href="WIP.html" title="Készülő Modok"><img src="work-in-progress.png" alt="Készülők"></a></li>
+                <li><a href="faq.html" title="Gy.I.K"><img src="faq.png" alt="FAQ"></a></li>
             </ul>
         </nav>
         <div class="logo">
-            <a href="index.html"><img src="RRM.webp" alt="Logo"></a>
+            <a href="index.html" title="Főoldal"><img src="RRM.webp" alt="Logo"></a>
         </div>
         <nav class="right">
             <ul class="nav-menu2">
-                <li><a href="social.html"><img src="social.png" alt="Social"></a></li>
-                <li><a href="contacts.html"><img src="chat.png" alt="Elérhetőségek"></a></li>
-                <li><a href="discord.html"><img src="discord.webp" alt="Discord"></a></li>
+                <li><a href="social.html" title="Social/Közösségi Oldalak"><img src="social.png" alt="Social"></a></li>
+                <li><a href="contacts.html" title="Elérhetőségek"><img src="contacts.png" alt="Elérhetőségek"></a></li>
+                <li><a href="discord.html" title="Discord"><img src="discord.webp" alt="Discord"></a></li>
             </ul>
         </nav>
     </header>
