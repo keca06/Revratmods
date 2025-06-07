@@ -4,7 +4,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Elérhetőségeink">
+    <meta name="description" content="RevRatMods Elérhetőségeink">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" type="image/ico" href="RRM.webp" />
     <link rel="stylesheet" href="transition.css">
     <script src="transitions.js"></script>
@@ -580,6 +581,12 @@ function changeBackground() {
         bg.style.opacity = 1; // Új kép megjelenítése
     }, 1000);
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const bg = document.querySelector('.background');
+    const randomIndex = Math.floor(Math.random() * images.length);
+    bg.style.backgroundImage = `url('${images[randomIndex]}')`;
+});
 
 setInterval(changeBackground, 7000); // 7 másodpercenként váltás
 
